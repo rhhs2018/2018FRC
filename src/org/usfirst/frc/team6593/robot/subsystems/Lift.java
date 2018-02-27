@@ -17,9 +17,24 @@ public class Lift extends Subsystem {
     // here. Call these from Commands.
 	private final SpeedController liftMech = RobotMap.liftingMech; 
 
+	
+	 public void startRolling(double i){
+	    	//if(stop == false){
+	    		liftMech.set(i);
+	    	//}else{
+	    		//rollingSC.set(0.8);
+	    	//}
+	    }
+	    
+	    public void stopRolling(){
+	    	liftMech.set(0);
+	    }
+	    public void invertRolling(double i){
+	    	liftMech.set(i);
+	    }
     public void initDefaultCommand() {
     	
-    	setDefaultCommand(new Lifting());
+    	//setDefaultCommand(new Lifting());
     	//setDefaultCommand(new ());
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
